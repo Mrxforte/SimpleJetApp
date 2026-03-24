@@ -8,26 +8,26 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.ElevatedButton
+import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.FilledTonalIconToggleButton
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -59,7 +59,7 @@ class MainActivity : ComponentActivity() {
                 ) {
 //                    Image using in the jetpack compose
                     Image(
-                        contentScale = ContentScale.FillWidth,
+                        contentScale = ContentScale.Crop,
                         contentDescription = "Image",
                         painter = painterResource(R.drawable.img),
                         modifier = Modifier
@@ -113,11 +113,31 @@ class MainActivity : ComponentActivity() {
                         )
                     }
 
-//                Button usage
+//                Button usage in row
                     Button(onClick = {
                         Log.d("Tag", "MainUI:  is running and button is  clicked")
                     }) {
-                        Text("Button Simple")
+                        Text("Simple Button")
+                    }
+                    FilledTonalButton (onClick = {
+                        Log.d("Tag", "MainUI:  is running and button is  clicked")
+                    }) {
+                        Text("Filled Tonal Button")
+                    }
+                    ElevatedButton(onClick = {
+                        Log.d("Tag", "MainUI:  is running and button is  clicked")
+                    }) {
+                        Text("Elevated Button")
+                    }
+                    OutlinedButton(onClick = {
+                        Log.d("Tag", "MainUI:  is running and button is  clicked")
+                    }) {
+                        Text("Outlined Button")
+                    }
+                    TextButton(onClick = {
+                        Log.d("Tag", "MainUI:  is running and button is  clicked")
+                    }) {
+                        Text("Text Button")
                     }
                 }
 
